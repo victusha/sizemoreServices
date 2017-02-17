@@ -1,0 +1,26 @@
+
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+
+  .navbar-brand {
+    font-size: 26px;
+    color:red;
+  }
+.navbar-inverse .navbar-brand {
+  color:yellow;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: yellow;
+}
+
+.navbar {
+    background-color:green;
+    border-color: black;
+}
+.carousel-inner > .item > img  {
+  height: 400px;
+  width: 750px;
+}
