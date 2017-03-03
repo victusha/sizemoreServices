@@ -10,7 +10,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <style>
      <link href="landscaping.css" rel="stylesheet">
-      
+     <link href="https://fonts.googleapis.com/
+     <link href="https://fonts.googleapis.com/css?family= Dancing Script" rel='stylesheet'>  
     </style>
   <style>
   .carousel-inner > .item > img,
@@ -23,21 +24,29 @@
     font-size: 26px;
     color:red;
   }
-.navbar-inverse .navbar-brand {
-  color:blue;
-}
-.navbar-inverse .navbar-nav>li>a {
-  color: yellow;
-}
+  .navbar-inverse .navbar-brand {
+    color:yellow;
+  }
+  .navbar-inverse .navbar-nav>li>a {
+    color: yellow;
+  }
 
-.navbar {
-    background-color:green;
-    border-color: black;
-}
-.carousel-inner > .item > img  {
-  height: 400px;
-  width: 750px;
-}
+  .navbar {
+      background-color:green;
+      border-color: black;
+  }
+  .carousel-inner > .item > img  {
+    height: 400px;
+    width: 750px;
+  }
+   .margins { 
+    /position: absolute;  left: 75px; z-index: 200; 
+     margin-left: 50px;
+  }
+  body {
+    font-family: Dancing Script
+    font-size: 30px;
+  };
 
   </style>
 
@@ -63,11 +72,11 @@
       <a class="navbar-brand" href="#">Sizemore Services</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="sizemoreServices.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="AboutUs.html">About Us</a></li>
       <li class="active"><a href="ContactUs.html">Contact Us</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="">Testimonial</a></li>
+      <li><a href= "services.html">Services</a></li>
+      <li><a href= "testimonials.html">Testimonials</a></li>
     </ul>
   </div>
 </nav>
@@ -80,6 +89,7 @@
     <li><a href="Testimonials.html">Testimonials</a></li></li></li>
   </ul>
   <div> -->
+  <div class="margins">
    <h4>Call to Schedule an Appointment</h4>
 
    <p>Established in 2004.</p>
@@ -90,7 +100,6 @@
 
     <p>I'm secure, & bondable, with an understanding on how to take care of a home. I pride myself on being friendly, with a reliable service at a competitive price.</p>
 
-  </div>
   <br>
   <div>
      <h3> Hours</h3>
@@ -106,30 +115,39 @@
         <li>Sun Closed</li>  
         </ul>
 
-      <h2>Send e-mail to someone@example.com:</h2>
+      <h2>Send e-mail to Raven@sizemore.services:</h2>
 
-<form action="mailto:victoriawestbrook1
-@gmail.com" method="post" enctype="text/plain">
-Name:<br>
-<input type="text" name="name"><br>
-E-mail:<br>
-<input type="text" name="email"><br>
-Phone:<br>
-<input type="text" name="phone"><br>
-Comment:<br>
-<textarea rows="4" cols="50">Enter Job Description</textarea><br><br>
-<input type="submit" value="Send">
-<input type="reset" value="Reset">
-</form>
-
+      <form enctype="text/plain" id="formBody">
+      Name:<br>
+      <input type="text" name="name" id="name"><br>
+      E-mail:<br>
+      <input type="text" name="email" id="email"><br>
+      Phone:<br>
+      <input type="text" name="phone" id="phone" placeholder = 'xxx-xxx-xxxx'><br>
+      Job Description:<br>
+      <textarea rows="4" cols="50" id="jobDescription" placeholder ='Enter Job Description'></textarea><br><br>
+      <button id="loadEmail">Send</button>
+      <input type="reset" value="Reset">
+      </form>
+         
   </div>
-    
+
+</div>    
 
    
   
   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script>
-      
+      $('#loadEmail').on('click', function(event) {
+        var jobText = $('#jobDescription').val();
+        var subjectLine = ($('#name').val() + " -- " + $("#phone").val() + " -- " + $('#email').val());
+        subjectLine = encodeURIComponent(subjectLine);
+        jobText = encodeURIComponent(jobText);
+        console.log(jobText);
+        window.open("mailto:victoriawestbrook1@gmail.com?subject=" + subjectLine + "&body=" + jobText);
+        //event.preventDefault();
+      });
+  
     </script>
   </body>
 </html>
